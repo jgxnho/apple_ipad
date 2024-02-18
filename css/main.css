@@ -149,6 +149,13 @@ a.link::after {
 .info {
   max-width: 330px;
   margin-bottom: 24px;
+  transition: 1s;
+  transform: translate(0, 100px);
+  opacity: 0;
+}
+.info.show {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .info .icon {
@@ -426,7 +433,7 @@ header .search .autocompletes {
   box-sizing: border-box;
   background-color: var(--color-white);
   position: absolute;
-  height: var(--header-height);
+  top: var(--header-height);
   left: 0;
 }
 
