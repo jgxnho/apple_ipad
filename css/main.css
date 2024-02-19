@@ -753,6 +753,40 @@ nav .menu li.active:hover a {
 .camera .stage figure {
   transform: translate(90px, 0);
 }
+
+.camera .stage video {
+  position: absolute;
+  top: 36px;
+  left: 76px;
+  --webkit-mask-image: url(../images/camera_video_mask.png);
+  mask-image: url(../images/camera_video_mask.png);
+}
+
+.camera .stage .control--play,
+.camera .stage .control--pause {
+  color: var(--color-link);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translate(428px, -134px) rotate(-3deg);
+}
+
+.camera .stage .control--play:hover,
+.camera .stage .control--pause:hover {
+  text-decoration: underline;
+}
+.camera .stage .control--play.hide,
+.camera .stage .control--pause.hide {
+  display: none;
+}
+
+.camera .stage .control--play img,
+.camera .stage .control--pause img {
+  width: 20px;
+  margin-top: -2px;
+}
+
 .camera .stage figcaption {
   width: 130px;
   height: 110px;
