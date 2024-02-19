@@ -45,6 +45,7 @@ searchShadowEl.addEventListener("click", hideSearch);
 
 function showSearch() {
   headerEl.classList.add("searching");
+  stopScroll();
   document.documentElement.classList.add("fixed");
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (index * 0.4) / headerMenuEls.length + "s";
@@ -59,6 +60,7 @@ function showSearch() {
 
 function hideSearch() {
   headerEl.classList.remove("searching");
+  playScroll();
   document.documentElement.classList.remove("fixed");
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (index * 0.4) / headerMenuEls.length + "s";
@@ -68,6 +70,14 @@ function hideSearch() {
   });
   searchDelayEls.reverse();
   searchInputEl.value = "";
+}
+
+function playScroll() {
+  // documentElement is <html>
+  document.documentElement.classList.remove("fixed");
+}
+function stopScroll() {
+  document.documentElement.classList.add("fixed");
 }
 
 // 요소의 가시성 관찰
