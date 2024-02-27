@@ -84,6 +84,18 @@ function stopScroll() {
   document.documentElement.classList.add("fixed");
 }
 
+// 헤더의 메뉴 토글
+const menuStarterEl = document.querySelector("header .menu-starter");
+menuStarterEl.addEventListener("click", function () {
+  if (headerEl.classList.contains("menuing")) {
+    headerEl.classList.remove("menuing");
+    playScroll();
+  } else {
+    headerEl.classList.add("menuing");
+    stopScroll();
+  }
+});
+
 // 요소의 가시성 관찰
 const io = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
